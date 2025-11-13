@@ -31,7 +31,6 @@ xcode-select --install
 
 ## 빌드 및 실행
 
-**Xcode IDE 없이도 빌드 가능합니다!** Xcode Command Line Tools만 있으면 됩니다.
 
 ### 방법 1: Swift Package Manager 직접 사용 (권장)
 
