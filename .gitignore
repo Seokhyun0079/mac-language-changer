@@ -12,12 +12,15 @@ DerivedData/
 .DS_Store
 
 # 앱 번들 및 배포 파일
-*.app
-*.dmg
-*.pkg
 component.pkg
 dmg_temp/
 
 # 빌드 아티팩트
 *.swiftmodule
 *.swiftdoc
+
+# Swift 버전
+.swift-version
+
+# Clang module cache
+.clang-module-cache/

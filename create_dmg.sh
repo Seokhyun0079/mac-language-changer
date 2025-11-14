@@ -3,7 +3,7 @@
 # DMG 파일 생성 스크립트
 set -e
 
-APP_NAME="LanguageChanger"
+APP_NAME="MacLanguageChager"
 APP_BUNDLE="${APP_NAME}.app"
 DMG_NAME="${APP_NAME}"
 VOLUME_NAME="${APP_NAME}"

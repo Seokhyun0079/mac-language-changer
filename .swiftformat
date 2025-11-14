@@ -1,0 +1,22 @@
+# SwiftFormat 설정 파일
+
+# Swift 버전
+--swiftversion 5.9
+
+# 들여쓰기: 4칸 스페이스
+--indent 4
+
+# 최대 줄 길이: 120
+--maxwidth 120
+
+# import 문 정렬
+--importgrouping testable-bottom
+
+# 줄바꿈 스타일: LF
+--linebreaks lf
+
+# 삽입된 공백 제거
+--trimwhitespace always
+
+# 세미콜론 제거
+--semicolons never

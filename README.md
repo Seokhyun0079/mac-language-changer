@@ -74,6 +74,9 @@ open Package.swift
    - 원하는 키 조합을 누릅니다 (예: ⌘ + Space).
    - 단축키가 자동으로 저장되고 활성화됩니다.
    - 설정한 단축키를 누르면 다음 입력 소스로 전환됩니다.
+5. **자동 실행 옵션**:
+   - "로그인 시 자동 실행" 토글을 켜면, `~/Library/LaunchAgents`에 LaunchAgent가 생성되어 재부팅 후 자동으로 실행됩니다.
+   - 해제하면 LaunchAgent가 제거됩니다.
 
 ## 주의사항
 
@@ -88,12 +91,13 @@ open Package.swift
 ### 프로젝트 구조
 
 ```
-Sources/mac-language-change/
+Sources/MacLanguageChager/
 ├── main.swift                    # 앱 진입점 및 메뉴바 설정
-├── LanguageChangerView.swift     # 메인 UI 뷰
+├── MacLanguageChagerView.swift   # 메인 UI 뷰
 ├── InputSourceManager.swift      # 입력 소스 관리 로직
 ├── KeyComboRecorder.swift        # 키보드 단축키 기록 기능
-└── GlobalShortcutManager.swift   # 전역 키보드 단축키 등록
+├── GlobalShortcutManager.swift   # 전역 단축키 등록
+└── AutoStartManager.swift        # 자동 실행 관리
 ```
 
 ### 주요 기술
@@ -134,14 +138,14 @@ xcode-select --install
 ./create_app.sh
 ```
 
-생성된 `LanguageChanger.app`을 실행하거나 Applications 폴더로 복사할 수 있습니다:
+생성된 `MacLanguageChager.app`을 실행하거나 Applications 폴더로 복사할 수 있습니다:
 
 ```bash
 # 앱 실행
-open LanguageChanger.app
+open MacLanguageChager.app
 
 # Applications 폴더로 복사
-cp -r LanguageChanger.app /Applications/
+cp -r MacLanguageChager.app /Applications/
 ```
 
 ### DMG 파일 생성 (배포용)
@@ -152,7 +156,7 @@ DMG 파일을 생성하여 배포할 수 있습니다:
 ./create_dmg.sh
 ```
 
-`LanguageChanger.dmg` 파일이 생성되며, 이를 다운로드하여 설치할 수 있습니다.
+`MacLanguageChager.dmg` 파일이 생성되며, 이를 다운로드하여 설치할 수 있습니다.
 
 ### PKG 파일 생성 (설치 프로그램)
 
@@ -162,7 +166,7 @@ DMG 파일을 생성하여 배포할 수 있습니다:
 ./create_pkg.sh
 ```
 
-`LanguageChanger.pkg` 파일이 생성되며, 이를 실행하면 설치 프로그램이 실행됩니다.
+`MacLanguageChager.pkg` 파일이 생성되며, 이를 실행하면 설치 프로그램이 실행됩니다.
 
 ## 라이선스
 

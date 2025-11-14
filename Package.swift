@@ -2,19 +2,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "mac-language-change",
+    name: "MacLanguageChager",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .executable(
-            name: "mac-language-change",
-            targets: ["mac-language-change"]
+            name: "MacLanguageChager",
+            targets: ["MacLanguageChager"]
         ),
     ],
     targets: [
         .executableTarget(
-            name: "mac-language-change",
+            name: "MacLanguageChager",
             dependencies: []
         ),
     ]

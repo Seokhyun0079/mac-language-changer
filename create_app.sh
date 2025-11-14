@@ -3,7 +3,8 @@
 # .app 번들 생성 스크립트
 set -e
 
-APP_NAME="LanguageChanger"
+APP_NAME="MacLanguageChager"
+APP_IDENTIFIER="com.maclanguageschager.maclanguagechager"
 APP_BUNDLE="${APP_NAME}.app"
 APP_DIR="${APP_BUNDLE}/Contents"
 MACOS_DIR="${APP_DIR}/MacOS"
@@ -33,7 +34,7 @@ mkdir -p "${RESOURCES_DIR}"
 
 # 4. 실행 파일 복사
 echo "📋 실행 파일 복사 중..."
-EXECUTABLE_PATH=".build/release/mac-language-change"
+EXECUTABLE_PATH=".build/release/MacLanguageChager"
 if [ -f "${EXECUTABLE_PATH}" ]; then
     cp "${EXECUTABLE_PATH}" "${MACOS_DIR}/${APP_NAME}"
     chmod +x "${MACOS_DIR}/${APP_NAME}"
@@ -54,7 +55,7 @@ cat > "${APP_DIR}/Info.plist" << EOF
     <key>CFBundleExecutable</key>
     <string>${APP_NAME}</string>
     <key>CFBundleIdentifier</key>
-    <string>com.maclanguagechange.${APP_NAME}</string>
+    <string>${APP_IDENTIFIER}</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>

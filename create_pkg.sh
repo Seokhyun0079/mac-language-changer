@@ -3,7 +3,7 @@
 # PKG 파일 생성 스크립트 (pkgbuild 사용)
 set -e
 
-APP_NAME="LanguageChanger"
+APP_NAME="MacLanguageChager"
 APP_BUNDLE="${APP_NAME}.app"
 PKG_NAME="${APP_NAME}.pkg"
 
@@ -21,7 +21,7 @@ echo "🔨 컴포넌트 패키지 생성 중..."
 
 pkgbuild \
     --root . \
-    --identifier "com.maclanguagechange.${APP_NAME}" \
+    --identifier "com.maclanguageschager.${APP_NAME}" \
     --version "1.0.0" \
     --install-location "/Applications" \
     --component "${APP_BUNDLE}" \
