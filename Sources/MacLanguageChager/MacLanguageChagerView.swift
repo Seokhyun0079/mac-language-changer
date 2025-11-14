@@ -14,7 +14,7 @@ struct MacLanguageChagerView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             // 헤더
-            Text("언어 전환 설정")
+            Text("Language Switch Settings")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom, 10)
@@ -23,7 +23,7 @@ struct MacLanguageChagerView: View {
 
             // 입력 소스 목록
             VStack(alignment: .leading, spacing: 10) {
-                Text("사용 가능한 입력 소스")
+                Text("Available Input Sources")
                     .font(.headline)
 
                 List {
@@ -49,15 +49,15 @@ struct MacLanguageChagerView: View {
 
             // 키보드 단축키 설정
             VStack(alignment: .leading, spacing: 10) {
-                Text("키보드 단축키")
+                Text("Keyboard Shortcut")
                     .font(.headline)
 
                 HStack {
-                    Text("다음 입력 소스로 전환:")
+                    Text("Switch to next input source:")
                     Spacer()
 
                     if isRecording {
-                        Button("녹음 중... (키를 누르세요)") {
+                        Button("Recording… (press keys)") {
                             stopRecording()
                         }
                         .buttonStyle(.bordered)
@@ -69,7 +69,7 @@ struct MacLanguageChagerView: View {
                         .buttonStyle(.bordered)
                         .controlSize(.small)
                     } else {
-                        Button("기록") {
+                        Button("Record") {
                             startRecording()
                         }
                         .buttonStyle(.bordered)
@@ -79,11 +79,11 @@ struct MacLanguageChagerView: View {
 
                 if let shortcut = selectedShortcut {
                     HStack {
-                        Text("현재 단축키:")
+                        Text("Current shortcut:")
                         Text(shortcut.displayString)
                             .foregroundColor(.secondary)
                         Spacer()
-                        Button("제거") {
+                        Button("Remove") {
                             selectedShortcut = nil
                             shortcutManager.unregisterShortcut()
                         }
@@ -95,7 +95,7 @@ struct MacLanguageChagerView: View {
 
             Divider()
 
-            Toggle("로그인 시 자동 실행", isOn: $autoLaunchEnabled)
+            Toggle("Launch at login", isOn: $autoLaunchEnabled)
                 .onChange(of: autoLaunchEnabled) { newValue in
                     autoStartManager.setEnabled(newValue)
                 }
@@ -104,7 +104,7 @@ struct MacLanguageChagerView: View {
             // 하단 버튼
             HStack {
                 Spacer()
-                Button("닫기") {
+                Button("Close") {
                     NSApplication.shared.keyWindow?.close()
                 }
                 .keyboardShortcut(.defaultAction)

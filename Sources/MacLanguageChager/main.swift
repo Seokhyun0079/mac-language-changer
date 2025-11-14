@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusBarItem?.button {
             // 텍스트 레이블로 표시 (더 명확함)
             button.title = "🌐"
-            button.toolTip = "MacLanguageChager - 언어 전환 설정 (좌클릭: 설정, 우클릭: 메뉴)"
+            button.toolTip = "MacLanguageChager"
             button.action = #selector(togglePopover)
             button.target = self
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
@@ -57,12 +57,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let menu = NSMenu()
         statusMenu = menu
 
-        menu.addItem(NSMenuItem(title: "언어 전환 설정", action: #selector(showPopoverFromMenu), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Language Switch Settings", action: #selector(showPopoverFromMenu), keyEquivalent: ""))
         menu.items.last?.target = self
 
         menu.addItem(NSMenuItem.separator())
 
-        menu.addItem(NSMenuItem(title: "종료 MacLanguageChager", action: #selector(quitApp), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit MacLanguageChager", action: #selector(quitApp), keyEquivalent: "q"))
         menu.items.last?.target = self
         menu.items.last?.keyEquivalentModifierMask = .command
 
