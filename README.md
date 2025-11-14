@@ -124,6 +124,46 @@ xcode-select --install
 2. 다른 앱과 단축키 충돌 여부 확인
 3. 앱을 재시작해보기
 
+## 배포
+
+앱을 설치 가능한 프로그램 형태로 배포할 수 있습니다.
+
+### .app 번들 생성
+
+```bash
+./create_app.sh
+```
+
+생성된 `LanguageChanger.app`을 실행하거나 Applications 폴더로 복사할 수 있습니다:
+
+```bash
+# 앱 실행
+open LanguageChanger.app
+
+# Applications 폴더로 복사
+cp -r LanguageChanger.app /Applications/
+```
+
+### DMG 파일 생성 (배포용)
+
+DMG 파일을 생성하여 배포할 수 있습니다:
+
+```bash
+./create_dmg.sh
+```
+
+`LanguageChanger.dmg` 파일이 생성되며, 이를 다운로드하여 설치할 수 있습니다.
+
+### PKG 파일 생성 (설치 프로그램)
+
+설치 프로그램(PKG)을 생성할 수 있습니다:
+
+```bash
+./create_pkg.sh
+```
+
+`LanguageChanger.pkg` 파일이 생성되며, 이를 실행하면 설치 프로그램이 실행됩니다.
+
 ## 라이선스
 
 MIT License
